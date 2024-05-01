@@ -31,8 +31,6 @@ app.post('/move', (req, res) => {
 
     const fen = req.body.fen;
 
-    console.log(`fen ${fen}l`)
-
     const capi = spawn("./capizero", [], { stdio: ['pipe', 'pipe', 'pipe'], shell: true });
 
     capi.stdin.write(`fen ${fen}\n`);
