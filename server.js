@@ -15,6 +15,7 @@ app.use(cors({ origin: "*" }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use('/play', express.static('play'))
 
 app.get('/ping', (req, res) => {
     res.send('pong');
