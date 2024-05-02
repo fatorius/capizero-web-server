@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#FFFFFF" />
+    <meta
+      name="description"
+      content="Play against Capizero online!"
+    />
+    <link rel="manifest" href="/play/manifest.json" />
+    <title>Play Capizero</title>
+    <script>
+      const global = globalThis;
+    </script>
+    
+    <script>
+      var deferredPrompt;
+
+      window.addEventListener('beforeinstallprompt', (e) => {
+          console.log("Este PWA está pronto para ser instalado");
+          deferredPrompt = e;
+      });
+    </script>
+    <script type="module" crossorigin src="/play/assets/index-26bcda49.js"></script>
+    <link rel="stylesheet" href="/play/assets/index-1068e8b2.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    
+  </body>
+</html>
