@@ -35,7 +35,13 @@ app.post('/move', (req, res) => {
     const capi = spawn("./capizero", [], { stdio: ['pipe', 'pipe', 'pipe'], shell: true });
 
     capi.stdin.write(`fen ${fen}\n`);
-    capi.stdin.write(`tempo ${req.body.time}\n`);
+
+    if (req.body.depth === undefined){
+        capi.stdin.write(`tempo ${req.body.time}\n`);
+    }
+    else{
+        capi.stdin.write(`prof ${req.body.depth}\n`);    
+    }
     capi.stdin.write('calc');
     capi.stdin.end();
 
